@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Layer 1 of 7 · Settings — design tokens
+   Colors, spacing, type and shape. Dark is the default; the light theme only swaps values.
+   Pages link this file directly (no sync needed); tools/build.mjs inlines it in dist/.
+   ========================================================================== */
+
+:root {
+    /* Color */
+    --color-bg: #0e0e13;
+    --color-surface: #17171f;
+    --color-surface-alt: #20202b;
+    --color-border: #2e2e3d;
+    --color-border-strong: #6e6e88;
+    --color-focus: #ffffff;
+    --color-text: #f2f2f7;
+    --color-muted: #a9a9bc;
+    --color-accent: #ff3d9e;
+    --color-accent-strong: #ff1493;
+    --color-on-accent: #16050e;
+    --color-success: #3ddc84;
+    --color-danger: #ff6b78;
+    --color-warning: #ffc94d;
+
+    /* Spacing scale */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+
+    /* Type scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-md: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 2rem;
+    --text-3xl: 2.5rem;
+    --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+    /* Shape */
+    --radius: 12px;
+    --radius-small: 8px;
+    --target: 48px;
+
+    /* Decorative waves: inline SVGs used as mask-image, so a pseudo-element paints them
+       with any color token (both themes) without extra HTML or requests.
+       band: seamless 120×16 tile for full-width lines · lines: three parallel waves (440×120)
+       · small: short wave for cards (48×12). */
+    --wave-band: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='16' viewBox='0 0 120 16'%3E%3Cpath d='M0 8C20 2 40 2 60 8S100 14 120 8' fill='none' stroke='%23000' stroke-width='1.25'/%3E%3C/svg%3E");
+    --wave-lines: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='440' height='120' viewBox='0 0 440 120' fill='none' stroke='%23000' stroke-width='1.25'%3E%3Cpath d='M0 40C55 10 110 10 165 40S275 70 330 40 385 10 440 40'/%3E%3Cpath d='M0 60C55 30 110 30 165 60S275 90 330 60 385 30 440 60' stroke-opacity='.7'/%3E%3Cpath d='M0 80C55 50 110 50 165 80S275 110 330 80 385 50 440 80' stroke-opacity='.4'/%3E%3C/svg%3E");
+    --wave-small: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='12' viewBox='0 0 48 12'%3E%3Cpath d='M1 6C7 1 13 1 19 6S31 11 37 6 43 1 47 6' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    color-scheme: dark;
+}
+
+/* Light theme: same tokens, new values (contrast checked: text ≥ 4.5:1, controls ≥ 3:1).
+   Dark stays the default; shared/js/header.js sets data-theme="light" on request. */
+:root[data-theme="light"] {
+    --color-bg: #fafafc;
+    --color-surface: #ffffff;
+    --color-surface-alt: #f1f1f6;
+    --color-border: #dcdce6;
+    --color-border-strong: #85859c;
+    --color-focus: #16161d;
+    --color-text: #16161d;
+    --color-muted: #55556a;
+    --color-accent: #c2006b;
+    --color-accent-strong: #a3005a;
+    --color-on-accent: #ffffff;
+    --color-success: #0f7a3e;
+    --color-danger: #c2253b;
+    --color-warning: #8a5a00;
+    color-scheme: light;
+}

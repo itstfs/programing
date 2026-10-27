@@ -1,0 +1,250 @@
+/* Table (same pattern as the Excel site) ------------------------------------ */
+
+/* Positioned so visually-hidden content inside the table stays in this scroll box
+   instead of widening the whole page (WCAG 1.4.10 reflow). */
+.sheet {
+    position: relative;
+    overflow: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-small);
+    scrollbar-width: thin;
+}
+
+.sheet__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+}
+
+.sheet__head {
+    padding: 10px var(--space-3);
+    background-color: var(--color-surface-alt);
+    color: var(--color-muted);
+    font-weight: 600;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.sheet__head--number {
+    text-align: right;
+}
+
+.sheet__row--new {
+    outline: 1px solid var(--color-success);
+    outline-offset: -1px;
+}
+
+.sheet__cell {
+    padding: 10px var(--space-3);
+    border-top: 1px solid var(--color-border);
+    white-space: nowrap;
+}
+
+.sheet__cell--number {
+    font-family: var(--font-mono);
+    text-align: right;
+}
+
+.sheet__remove {
+    min-width: 48px;
+    min-height: 48px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-small);
+    background-color: transparent;
+    color: var(--color-danger);
+    font: inherit;
+    cursor: pointer;
+}
+
+.sheet__remove:hover {
+    border-color: var(--color-danger);
+}
+
+/* School ------------------------------------------------------------------ */
+
+.school__summary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.school__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--space-3) 20px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-small);
+}
+
+.school__stat-label {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+}
+
+.school__stat-value {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.school__subtitle {
+    margin: 0;
+    font-size: var(--text-lg);
+}
+
+.school__form {
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-small);
+}
+
+.school__field--small {
+    flex: 1 1 110px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: var(--text-xs);
+    font-weight: 700;
+}
+
+.badge--success {
+    background-color: rgba(61, 220, 132, 0.15);
+    color: var(--color-success);
+}
+
+.badge--danger {
+    background-color: rgba(255, 107, 120, 0.15);
+    color: var(--color-danger);
+}
+
+.badge--neutral {
+    background-color: var(--color-surface-alt);
+    color: var(--color-muted);
+}
+
+/* Setup (computer + room) --------------------------------------------------- */
+
+.setup {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+}
+
+.setup__card {
+    align-content: start;
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-small);
+}
+
+.field[hidden],
+.form__row[hidden] {
+    display: none;
+}
+
+/* A terminal is dark in both themes: re-declare the tokens it uses locally */
+.terminal {
+    --color-text: #f2f2f7;
+    --color-muted: #a9a9bc;
+    --color-success: #3ddc84;
+    --color-surface-alt: #20202b;
+    --color-border: #2e2e3d;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-small);
+    background-color: #07070a;
+    color: var(--color-text);
+}
+
+.terminal__bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background-color: var(--color-surface-alt);
+}
+
+.terminal__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-border);
+}
+
+.terminal__title {
+    padding-left: var(--space-2);
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+}
+
+/* Thin, themed scrollbar for the fake terminal */
+.terminal__screen {
+    scrollbar-width: thin;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    min-height: 220px;
+    max-height: 360px;
+    padding: var(--space-4);
+    overflow: auto;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+}
+
+.terminal__line {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.terminal__line--muted {
+    color: var(--color-muted);
+}
+
+.terminal__line--yellow {
+    color: #f5d76e;
+}
+
+.terminal__line--magenta {
+    color: #e88cf5;
+}
+
+.terminal__line--green {
+    color: var(--color-success);
+}
+
+.terminal__progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.terminal__track {
+    flex: 0 1 240px;
+    height: 10px;
+    overflow: hidden;
+    border-radius: 2px;
+    background-color: var(--color-surface-alt);
+}
+
+.terminal__fill {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-success);
+    transform: scaleX(0);
+    transform-origin: left center;
+}
+
+@media (min-width: 768px) {
+    .setup {
+        grid-template-columns: 1fr 1fr;
+    }
+}

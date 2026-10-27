@@ -1,0 +1,102 @@
+/* ==========================================================================
+   Layer 2 of 7 · Base — page defaults
+   Box sizing, page, focus ring, neutral scrollbar, skip link and utilities.
+   Pages link this file directly (no sync needed); tools/build.mjs inlines it in dist/.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: var(--text-md);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    scrollbar-color: var(--color-border-strong) transparent;
+}
+
+.page__main {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    gap: var(--space-5);
+    padding-bottom: var(--space-7);
+}
+
+/* One visible focus ring for every interactive element (WCAG 2.4.7 / 2.4.11) */
+:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+/* Anchors and focused elements land below the fixed header (WCAG 2.4.11).
+   shared/header.js keeps --topbar-height in sync with the real header height. */
+:root {
+    scroll-padding-top: calc(var(--topbar-height, 72px) + var(--space-3));
+}
+
+/* Neutral scrollbar: gray thumb on a transparent track, so it blends with any surface
+   (thumb ≥ 3:1 on the surfaces in both themes).
+   scrollbar-color on .page is inherited by every scroll area; ::-webkit-* covers Safari. */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    border-radius: 999px;
+    background-color: var(--color-border-strong);
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-muted);
+}
+
+/* Skip link ----------------------------------------------------------------- */
+
+.skip-link {
+    position: absolute;
+    top: var(--space-2);
+    left: var(--space-2);
+    z-index: 10;
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-small);
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+    font-weight: 700;
+    text-decoration: none;
+    transform: translateY(-160%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+/* Utilities --------------------------------------------------------------- */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}

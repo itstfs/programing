@@ -1,0 +1,206 @@
+/* ==========================================================================
+   Layer 5 of 7 · Forms — input and actions
+   Form layout, fields, select, radio options and buttons.
+   Pages link this file directly (no sync needed); tools/build.mjs inlines it in dist/.
+   ========================================================================== */
+
+/* Forms ------------------------------------------------------------------- */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.form__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+.form__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.field {
+    display: flex;
+    flex: 1 1 180px;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.field--group {
+    flex: 0 0 auto;
+}
+
+.field__label {
+    padding: 0;
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+}
+
+/* A <legend> is not a flex item of its <fieldset>, so the .field gap never
+   reaches it. Padding on the legend itself gives the same 6px as a <label>. */
+.field__label--legend {
+    padding-bottom: 6px;
+}
+
+.field__input {
+    width: 100%;
+    min-height: var(--target);
+    padding: 0 14px;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-small);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font: inherit;
+}
+
+.field__input::placeholder {
+    color: var(--color-muted);
+    opacity: 1;
+}
+
+/* Select: custom arrow drawn with currentColor (follows the theme), 16px from the edge */
+.field__input--select {
+    padding-right: 44px;
+    background-image:
+        linear-gradient(45deg, transparent 50%, currentColor 50%),
+        linear-gradient(135deg, currentColor 50%, transparent 50%);
+    background-position:
+        calc(100% - 22px) 50%,
+        calc(100% - 16px) 50%;
+    background-size: 6px 6px;
+    background-repeat: no-repeat;
+    appearance: none;
+    cursor: pointer;
+}
+
+.field__input:focus {
+    border-color: var(--color-accent);
+}
+
+.field__options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-3);
+}
+
+/* Radio option without a box: the native radio (≥ 3:1) carries the state;
+   the 48px row stays as the touch target and gets a surface on hover. */
+.field__option {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: var(--target);
+    padding: 0 var(--space-3) 0 var(--space-2);
+    border-radius: var(--radius-small);
+    cursor: pointer;
+}
+
+.field__option:hover {
+    background-color: var(--color-surface-alt);
+}
+
+.field__radio {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: var(--color-accent);
+}
+
+/* Buttons — primary (default) · secondary · tertiary · danger --------------------- */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-height: var(--target);
+    padding: 0 20px;
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-small);
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+    font: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.button:active {
+    transform: scale(0.97);
+}
+
+.button[hidden] {
+    display: none;
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.button--secondary {
+    border-color: var(--color-border-strong);
+    background-color: transparent;
+    color: var(--color-text);
+}
+
+.button--secondary:hover {
+    border-color: var(--color-text);
+}
+
+.button--tertiary {
+    padding: 0 var(--space-2);
+    border-color: transparent;
+    background-color: transparent;
+    color: var(--color-muted);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.button--tertiary:hover {
+    color: var(--color-text);
+}
+
+.button--danger {
+    border-color: var(--color-danger);
+    background-color: transparent;
+    color: var(--color-danger);
+}
+
+.button--small {
+    min-height: var(--target);
+    padding: 0 14px;
+    font-size: var(--text-sm);
+}
+
+@media (min-width: 768px) {
+    /* Precise pointers on larger screens: compact secondary controls */
+    .button--small {
+        min-height: 40px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .button {
+        transition: none;
+    }
+}
+
+/* Windows high contrast: the custom select arrow is a background, so restore the native one */
+@media (forced-colors: active) {
+    .field__input--select {
+        appearance: auto;
+        background-image: none;
+    }
+}

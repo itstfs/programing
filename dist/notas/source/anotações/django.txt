@@ -1,0 +1,48 @@
+pip freeze > requirements.txt
+
+pip install gunicorn whitenoise djangorestframework
+
+- trabalhar com framework de style
+pip install django-bootstrap-v5 pillow
+
+
+'home',
+'rest_framework',
+'bootstrap5',
+
+
+
+
+//criar env e ativar ela:
+py -m venv env 	->	//-m de criar
+cd .\env\Scripts\
+.\Activate.ps1
+
+------------------------------
+//POWERSHELL
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+-------------------------------
+
+cd .. 	->	//até a pasta mãe
+pip install django
+django-admin startproject nomepasta 
+py .\manage.py runserver ->	//inicia o servidor
+py .\manage.py startapp home ->	//criar app com nome home
+
+
+//models
+py .\manage.py makemigrations 	->	//para mapear
+py .\manage.py migrate 	->	//armazenar no banco
+
+py .\manage.py createsuperuser 	->	//cria usuario no admin
+
+
+=-=-=-=-=-=-=
+//Entrar dps com projeto ja criado:
+pip install django
+pip install stdimage
+cd .\env\Scripts\
+.\Activate.ps1
+cd ..
+cd ..
+py .\manage.py runserver

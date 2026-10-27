@@ -1,0 +1,122 @@
+npm 
+node package manage -> gerenciador de dependencias do node. Instala plugins, bibliotecas e framworks necessarios ao projeto.
+
+npm init or npm init -y 
+gera > (package json) -> descrição do projeto com informações básicas, dependencias e devDependencias
+package json > (arquivo de config do projeto)
+
+principais comandos
+- install, update, version, config, (basicos)
+
+arquivo package.json
+- arquivo de configuração do projeto do node
+
+como declarar, iniciar o package.json
+- npm init
+  - (responde restionario)
+- se não quiser responder questionario use, npm init -y
+
+como colocar dependencias no package.json:
+dependeces: {
+"colocarDependencia" : "versaoParaBaixar"
+}
+
+=-=-=-=
+
+semVer -> relacionado a regras na mudanças de versões:
+
+Patch
+- correção de bug, ou melhoria de performance, sem adicionar novas funcionalidades
+- corrigir falhar mantendo compatibilidade
+
+Minor
+- adição de pequenas funcionalidades, mas nada realmente impactante como mudança do negócio ou dependências
+- adicionar funcionalidades mantendo compatibilidade
+
+Major
+- se realmente a mudança irá torna-lo incompatível com com a API atual
+- quando fizer mudanças incompatíveis na API
+
+
+react native
+- bibliotecas de javascript para mobile
+=-=-=-=
+dependencia > dependences
+- do projeto
+-> software deterceiros, no qual o código depende para funcionar corretamente (software de terceiros que nosso projeto depende)
+- Ex: Ronter, Redax, Axios, node_modulos, create-react-app, webpack, babel, bootstrap
+
+
+devDependences
+- do programador
+-> dependencias de software de terceiros que auxiliam o desenvolvedor. O projeto roda sem ele.
+- Ex: storyBook, eslint, typescript, 
+
+
+Gerenciador de dependencias
+-> software para gerenciar as dependencias dos projetos (software que gerencia os software de terceiros)
+- Windows > Chocolatey
+- Linux > Pax Man Apt
+- MacOS > honey
+
+
+
+
+
+dispositiveis móveis
+- possibilidade de locomoção
+- autonomia de energia
+- recurso de conectividade (acessar rede)
+- compartilhamento
+
+plataformas
+- ios > ObjectiveC,  Swift -> linguagem nativa
+- android > java, kotlin -> linguagem nativa
+
+
+
+mobile - dispositivo movel
+
+suift - desenvolver IOS
+
+nativo -> linguagem mais proxima sistema operacional
+hibrido -> linguagem que consegue se ligar com as duas plataformas, ios e android
+
+
+=-=-=-=-=-=-=-=-=-=
+nativos --> usar quando for necessario = segurança, performace, facilidade do uso dos recursos.
+comunica direto com o recurso do sistema operacional
+*vantagem
+- alta performace
+- mais facil de monetizar
+*desvantagem
+- ele tem curva de aprendizado alto, custo maior de treinamento
+- custo alto para desenvolver nele pq precisa de duas linguagens e duas equipes de desenvolvimento (ios, android)
+- ocupa mais espaço no smartphone
+
+
+web application/progressive web aplication > pwa:
+-->usar quando ocupar espaço no dispositivo do usuario for um problema.
+rodam no browser, conteiner.
+pwa -> site que se comporta como aplicativo, qnd for aberto no smartphone.
+*vantagem
+- curva de aprendizado pequena e nao tem cursto muito alto de movimento
+*desvantagem
+- não tem segurança, e sem acesso aos recursos
+
+
+hibridos:
+--> usar quando for necessario ganhar velocidade no desenvolvimento e diminuir o custo.
+programa cria aplicativo para todas as plataformas possiveis. multiplataforma.
+uiliza um unico código
+*vantagem
+- curva de aprendizado pequena
+- tem custo de desenvolvimento barato pq precisa de uma equipe só
+- é leve
+*desvantagem
+- não é tão seguro quanto o nativo
+- sem tanta facilidade dos recursos do dispositivo
+
+
+adk
+android develop k?

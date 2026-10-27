@@ -1,0 +1,198 @@
+/* Hub (index.html da raiz) ---------------------------------------------------- */
+
+/* .page__main (shared/css/base.css) already pushes the footer down and adds the bottom space */
+.hub__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    padding-top: var(--space-7);
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.hub__head {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+/* Decoration: three parallel waves on the empty right side (≥ 1200px, see below) */
+.hub__head::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    width: 440px;
+    height: 120px;
+    background-color: var(--color-accent);
+    opacity: 0.4;
+    pointer-events: none;
+    mask-image: var(--wave-lines);
+    mask-repeat: no-repeat;
+}
+
+/* Decoration: short wave under the intro text (in the flex flow, spaced by the gap) */
+.hub__head::after {
+    content: "";
+    width: 120px;
+    height: 16px;
+    background-color: var(--color-accent);
+    opacity: 0.6;
+    mask-image: var(--wave-band);
+    mask-size: 120px 16px;
+}
+
+.hub__eyebrow {
+    margin: 0;
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hub__title {
+    margin: 0;
+    font-size: var(--text-2xl);
+    line-height: 1.15;
+}
+
+.hub__text {
+    margin: 0;
+    max-width: 640px;
+    color: var(--color-muted);
+}
+
+.hub__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hub__card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    height: 100%;
+    padding: var(--space-5);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    text-decoration: none;
+    transition: transform 0.15s ease;
+}
+
+/* Decoration: thin line fading from the accent along the top edge ... */
+.hub__card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: var(--space-5);
+    width: 96px;
+    height: 2px;
+    background-image: linear-gradient(90deg, var(--color-accent), transparent);
+    pointer-events: none;
+}
+
+/* ... and a short wave in the top-right corner */
+.hub__card::after {
+    content: "";
+    position: absolute;
+    top: var(--space-5);
+    right: var(--space-5);
+    width: 48px;
+    height: 12px;
+    background-color: var(--color-accent);
+    opacity: 0.5;
+    pointer-events: none;
+    mask-image: var(--wave-small);
+}
+
+.hub__card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+/* Grows to fill the card, so .hub__card-action always sits at the bottom */
+.hub__card-content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.hub__card-title {
+    margin: 0;
+    font-size: var(--text-lg);
+}
+
+.hub__card-text {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: var(--text-md);
+}
+
+.hub__card-action {
+    margin: 0;
+    color: var(--color-accent);
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    .hub__container {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .hub__title {
+        font-size: var(--text-3xl);
+    }
+
+    .hub__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .hub__container {
+        width: 1140px;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Only here the intro text (max 640px) leaves room for it */
+    .hub__head::before {
+        display: block;
+    }
+
+    .hub__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hub__card {
+        transition: none;
+    }
+}
+
+/* Decoration only: hidden when the system replaces the colors */
+@media (forced-colors: active) {
+    .hub__head::before,
+    .hub__head::after,
+    .hub__card::before,
+    .hub__card::after {
+        display: none;
+    }
+}

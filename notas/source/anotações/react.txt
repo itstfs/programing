@@ -1,0 +1,58 @@
+comandos:
+    -- instalando pacote para poder criar o react (cmd) --
+	npm i -g create-react-app
+
+-- na pasta --
+npx create-react-app nomedesejado
+
+	--- para abrir vscode direto com a pasta desejada ---
+	- no prompt dentro da pasta
+	code .
+
+-- inicializar site --
+npm start
+
+
+
+
+anotações:
+arquivo.jsx:
+- permite escrever html de uma forma diferente
+- junta javaScript com html
+
+<React.Fragment> faz não aparecer a div no html </React.Fragment>
+- ou apenas <> </>
+
+state = {
+- armazena as variaveis dentro de forma privada
+}
+
+= () => {
+- uma arrow function
+- diminui trabalho de criar o construtor, criar super
+}
+
+props
+- uma propriedade que a gente pode passar para o componente
+
+className
+- porque é uma palavra reservada
+=-=-=-=-=-=-=
+SPA => Single Page Application
+- Aplicação de pagina unica > Só um html
+- JavaScript é responsável por fazer isso
+
+caminho na url => rota
+=-=-=-=-=-=-=
+
+ui/ux
+ui - interface do usuario -> User Interface
+ux - experiencia usando a interface -> User Xperience
+
+=-=-=-=-=-=-=
+
+ondestroy - usado quando sai da pagina
+
+baixa fidelidade - só figuras web, formato doq voc vai disponibilizar para o publico-alvo
+
+twillo - api cadastro para ver se o nºcelular é válido

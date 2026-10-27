@@ -1,0 +1,49 @@
+Niveis de abstração:
+- Conceitual
+- Lógico 
+- Físico
+
+
+- entidade = é algo, objeto, alguma coisa. Algo do mundo real, abstrato ou físico que é levado para o mundo virtual.
+- relacionamento = quando se relaciona uma entidade com a outra. EM RELACIONAMENTO TEM CARDIONALIDADE, q é uma regra.
+- chave estrangeira quando é 1:n -> doa o atributo pra outra.
+- n:n o relacionamento vira uma entidade (entidade fraca).
+- chave primaria = como se fosse um id, algo que tem q ser unico, ligado a um campo.
+- regra do 1:1 -> as entidade trocam chaves primarias.
+
+
+
+mer --> conceito, modelo. -> como fazer entidade, como fazer relacionamento. 
+"Modelo Entidade Relacionamento"
+
+der --> como fazer o diagrama.
+"Diagrama Entidade Relacionamento"
+- cardionalidade = 0:1 , 1:1, 1:n, n:n, 0:n.
+
+
+3 tipos de diagrama, der:
+conceitual,
+- primeiro diagrama que eu faço.
+- tem atributo, entidade, relacionamento.
+
+lógico,
+- tem mais cara de tabela.
+
+físico
+- migrando para o código, sql.
+- diagrama com mais definição. 
+- não colocamos index.
+
+=-=-==-=-=-=
+
+varchar(50) - salva só os caracteres do nome > (Thaiza = 6)
+char(50) - salva as 50 posições, independente > (Thaiza = 50)
+
+
+=-=-=-=--=-=-=
+
+int auto_incremente -> cresce de um em um
+not null -> obrigatório
+use nome_banco -> selecionar qual tabela ir o codigo
+
+=-=-=-=--=-=-=

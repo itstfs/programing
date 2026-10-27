@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notas — itstfs</title>
+    <meta name="description" content="Anotações de estudo organizadas em resumos: banco de dados, MySQL, Django, React, React Native, npm e mobile, e formatação de texto do Discord.">
+    <meta name="theme-color" content="#0e0e13">
+    <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon-180.png">
+    <script>try{if(localStorage.getItem("itstfs-theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
+    <style>:root{--color-bg:#0e0e13;--color-surface:#17171f;--color-surface-alt:#20202b;--color-border:#2e2e3d;--color-border-strong:#6e6e88;--color-focus:#ffffff;--color-text:#f2f2f7;--color-muted:#a9a9bc;--color-accent:#ff3d9e;--color-accent-strong:#ff1493;--color-on-accent:#16050e;--color-success:#3ddc84;--color-danger:#ff6b78;--color-warning:#ffc94d;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--text-xs:0.75rem;--text-sm:0.875rem;--text-md:1rem;--text-lg:1.25rem;--text-xl:1.5rem;--text-2xl:2rem;--text-3xl:2.5rem;--font-sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--font-mono:ui-monospace,"Cascadia Code","SFMono-Regular",Consolas,"Liberation Mono",monospace;--radius:12px;--radius-small:8px;--target:48px;--wave-band:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='16' viewBox='0 0 120 16'%3E%3Cpath d='M0 8C20 2 40 2 60 8S100 14 120 8' fill='none' stroke='%23000' stroke-width='1.25'/%3E%3C/svg%3E");--wave-lines:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='440' height='120' viewBox='0 0 440 120' fill='none' stroke='%23000' stroke-width='1.25'%3E%3Cpath d='M0 40C55 10 110 10 165 40S275 70 330 40 385 10 440 40'/%3E%3Cpath d='M0 60C55 30 110 30 165 60S275 90 330 60 385 30 440 60' stroke-opacity='.7'/%3E%3Cpath d='M0 80C55 50 110 50 165 80S275 110 330 80 385 50 440 80' stroke-opacity='.4'/%3E%3C/svg%3E");--wave-small:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='12' viewBox='0 0 48 12'%3E%3Cpath d='M1 6C7 1 13 1 19 6S31 11 37 6 43 1 47 6' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");color-scheme:dark}:root[data-theme="light"]{--color-bg:#fafafc;--color-surface:#ffffff;--color-surface-alt:#f1f1f6;--color-border:#dcdce6;--color-border-strong:#85859c;--color-focus:#16161d;--color-text:#16161d;--color-muted:#55556a;--color-accent:#c2006b;--color-accent-strong:#a3005a;--color-on-accent:#ffffff;--color-success:#0f7a3e;--color-danger:#c2253b;--color-warning:#8a5a00;color-scheme:light}*,*::before,*::after{box-sizing:border-box}.page{display:flex;flex-direction:column;min-height:100vh;margin:0;background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-sans);font-size:var(--text-md);line-height:1.5;-webkit-font-smoothing:antialiased;scrollbar-color:var(--color-border-strong) transparent}.page__main{display:flex;flex:1 0 auto;flex-direction:column;gap:var(--space-5);padding-bottom:var(--space-7)}:focus-visible{outline:2px solid var(--color-focus);outline-offset:2px}:root{scroll-padding-top:calc(var(--topbar-height,72px) + var(--space-3))}::-webkit-scrollbar{width:12px;height:12px}::-webkit-scrollbar-track{background-color:transparent}::-webkit-scrollbar-thumb{border:3px solid transparent;border-radius:999px;background-color:var(--color-border-strong);background-clip:padding-box}::-webkit-scrollbar-thumb:hover{background-color:var(--color-muted)}.skip-link{position:absolute;top:var(--space-2);left:var(--space-2);z-index:10;padding:var(--space-3) var(--space-4);border-radius:var(--radius-small);background-color:var(--color-accent);color:var(--color-on-accent);font-weight:700;text-decoration:none;transform:translateY(-160%)}.skip-link:focus{transform:translateY(0)}.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}.topbar{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--color-border);background-color:var(--color-bg);transition:transform 0.2s ease}.topbar--hidden{transform:translateY(-100%)}.topbar__container{display:grid;grid-template-columns:1fr auto;grid-template-areas:"brand theme" "nav nav";align-items:center;gap:var(--space-1) var(--space-4);padding-top:var(--space-2);padding-bottom:var(--space-2);padding-left:4%;padding-right:4%}.topbar__brand{grid-area:brand;justify-self:start;display:inline-flex;align-items:center;gap:10px;min-height:var(--target);padding-right:var(--space-2);border-radius:var(--radius-small);color:var(--color-text);text-decoration:none}.topbar__logo{display:block;width:32px;height:32px;border-radius:var(--radius-small)}.topbar__name{font-family:var(--font-mono);font-size:var(--text-lg);font-weight:700;letter-spacing:0.02em}.topbar__nav{grid-area:nav;justify-self:center;max-width:100%}.topbar__list{display:flex;flex-wrap:wrap;justify-content:center;gap:0 var(--space-1);margin:0;padding:0;list-style:none}.topbar__link{display:inline-flex;align-items:center;min-height:var(--target);padding:0 var(--space-3);border-bottom:2px solid transparent;color:var(--color-muted);font-size:var(--text-sm);text-decoration:none;white-space:nowrap}.topbar__link:hover{color:var(--color-text)}.topbar__link[aria-current="page"]{border-bottom-color:var(--color-accent);color:var(--color-text);font-weight:600}.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--color-border);background-color:var(--color-surface)}.hero::before{content:"";position:absolute;right:0;bottom:4px;left:0;height:16px;background-color:var(--color-accent);opacity:0.35;pointer-events:none;mask-image:var(--wave-band);mask-repeat:repeat-x;mask-size:120px 16px}.hero::after{content:"";position:absolute;top:var(--space-6);display:none;width:440px;height:120px;background-color:var(--color-accent);opacity:0.4;pointer-events:none;mask-image:var(--wave-lines);mask-repeat:no-repeat}.hero__container{position:relative;z-index:1;display:flex;flex-direction:column;gap:var(--space-3);padding-top:var(--space-6);padding-bottom:var(--space-6);padding-left:4%;padding-right:4%}.hero__title{margin:0;font-size:var(--text-2xl);line-height:1.15}.hero__text{margin:0;max-width:640px;color:var(--color-muted)}.footer{position:relative;border-top:1px solid var(--color-border);background-color:var(--color-surface)}.footer::before{content:"";position:absolute;top:-24px;right:0;left:0;height:16px;background-color:var(--color-accent);opacity:0.35;pointer-events:none;mask-image:var(--wave-band);mask-repeat:repeat-x;mask-size:120px 16px}.footer__container{display:grid;grid-template-columns:1fr;gap:var(--space-5);padding-top:var(--space-6);padding-bottom:var(--space-5);padding-left:4%;padding-right:4%}.footer__brand{display:flex;flex-direction:column;gap:var(--space-3)}.footer__home{display:inline-flex;align-self:flex-start;align-items:center;gap:10px;min-height:var(--target);color:var(--color-text);text-decoration:none}.footer__logo{display:block;width:32px;height:32px;border-radius:var(--radius-small)}.footer__name{font-family:var(--font-mono);font-size:var(--text-lg);font-weight:700}.footer__text{margin:0;max-width:360px;color:var(--color-muted);font-size:var(--text-sm)}.footer__stack{display:flex;flex-wrap:wrap;gap:var(--space-4);margin:0;padding:0;list-style:none}.footer__lang{display:flex;color:var(--color-muted);opacity:0.7}.footer__lang-icon{width:28px;height:28px}.footer__nav{display:flex;flex-direction:column;gap:var(--space-2)}.footer__title{margin:0;color:var(--color-muted);font-size:var(--text-xs);font-weight:600;letter-spacing:0.08em;text-transform:uppercase}.footer__list{display:flex;flex-wrap:wrap;gap:0 var(--space-4);margin:0;padding:0;list-style:none}.footer__link{display:inline-flex;align-items:center;gap:var(--space-2);min-height:var(--target);color:var(--color-text);font-size:var(--text-sm);text-decoration:none}.footer__link:hover{color:var(--color-accent)}.footer__icon{width:20px;height:20px;flex:0 0 auto}.footer__bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--space-2);padding-top:var(--space-4);border-top:1px solid var(--color-border)}.footer__copy{margin:0;color:var(--color-muted);font-size:var(--text-sm)}.footer__top{display:inline-flex;align-items:center;min-height:var(--target);color:var(--color-text);font-size:var(--text-sm);text-underline-offset:4px}@media (min-width:768px){.topbar__container,.hero__container,.footer__container{padding-left:6%;padding-right:6%}.hero__title{font-size:var(--text-3xl)}.footer__container{grid-template-columns:1fr 1fr}.footer__bottom{grid-column:1 / -1}}@media (min-width:1024px){.topbar__container{grid-template-columns:1fr auto 1fr;grid-template-areas:"brand nav theme"}}@media (min-width:1200px){.topbar__container,.hero__container,.footer__container{width:1140px;padding-left:0;padding-right:0;margin-left:auto;margin-right:auto}.hero::after{right:calc((100% - 1140px) / 2);display:block}}@media (prefers-reduced-motion:reduce){.topbar{transition:none}}@media (forced-colors:active){.topbar__link[aria-current="page"]{border-color:Highlight;outline:2px solid Highlight}.hero::before,.hero::after,.footer::before{display:none}}.breadcrumb__list{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2);margin:0;padding:0;list-style:none;font-size:var(--text-sm)}.breadcrumb__link{display:inline-flex;align-items:center;min-height:32px;color:var(--color-accent);text-underline-offset:3px}.breadcrumb__item--current{color:var(--color-muted)}.breadcrumb__item--current::before{content:"/";padding-right:var(--space-2);color:var(--color-border-strong)}.toc{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--space-1) var(--space-3);padding-top:var(--space-2)}.toc__label{margin:0;color:var(--color-muted);font-size:var(--text-xs);letter-spacing:0.08em;text-transform:uppercase}.toc__list{display:flex;flex-wrap:wrap;gap:0 var(--space-1);margin:0;padding:0;list-style:none}.toc__link{display:inline-flex;align-items:center;min-height:var(--target);padding:0 var(--space-2);color:var(--color-text);text-decoration:underline;text-decoration-color:var(--color-border-strong);text-underline-offset:4px}.toc__link:hover{text-decoration-color:var(--color-accent)}.switch{display:inline-flex;align-self:flex-start;gap:var(--space-1);padding:var(--space-1);border:1px solid var(--color-border-strong);border-radius:999px;background-color:var(--color-bg)}.switch__option{min-height:40px;padding:0 var(--space-4);border:0;border-radius:999px;background-color:transparent;color:var(--color-muted);font:inherit;font-size:var(--text-sm);cursor:pointer}.switch__option:hover{color:var(--color-text)}.switch__option--active{background-color:var(--color-accent);color:var(--color-on-accent);font-weight:600}.switch__option--active:hover{color:var(--color-on-accent)}.tabs{display:flex;flex-wrap:wrap;gap:0 var(--space-1);border-bottom:1px solid var(--color-border)}.tabs__button{flex:0 0 auto;min-height:var(--target);padding:0 var(--space-3);border:0;border-bottom:2px solid transparent;background-color:transparent;color:var(--color-muted);font:inherit;font-size:var(--text-sm);white-space:nowrap;cursor:pointer}.tabs__button:hover{color:var(--color-text)}.tabs__button--active{border-bottom-color:var(--color-accent);color:var(--color-text);font-weight:600}.theme-toggle{grid-area:theme;justify-self:end;display:inline-flex;align-items:center;gap:var(--space-2);min-height:var(--target);padding:0 var(--space-4);border:0;border-radius:999px;background-color:transparent;color:var(--color-text);font:inherit;font-size:var(--text-sm);cursor:pointer}.theme-toggle:hover{background-color:var(--color-surface-alt)}.theme-toggle__icon{width:18px;height:18px;flex:0 0 auto}.theme-toggle__icon[hidden]{display:none}@media (forced-colors:active){.switch__option--active,.tabs__button--active{border-color:Highlight;outline:2px solid Highlight}.theme-toggle{border:1px solid ButtonText}}.form{display:flex;flex-direction:column;gap:var(--space-4)}.form__row{display:flex;flex-wrap:wrap;gap:var(--space-3)}.form__actions{display:flex;flex-wrap:wrap;gap:var(--space-2)}.field{display:flex;flex:1 1 180px;flex-direction:column;gap:6px;min-width:0;margin:0;padding:0;border:0}.field--group{flex:0 0 auto}.field__label{padding:0;color:var(--color-muted);font-size:var(--text-sm)}.field__label--legend{padding-bottom:6px}.field__input{width:100%;min-height:var(--target);padding:0 14px;border:1px solid var(--color-border-strong);border-radius:var(--radius-small);background-color:var(--color-bg);color:var(--color-text);font:inherit}.field__input::placeholder{color:var(--color-muted);opacity:1}.field__input--select{padding-right:44px;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 22px) 50%,calc(100% - 16px) 50%;background-size:6px 6px;background-repeat:no-repeat;appearance:none;cursor:pointer}.field__input:focus{border-color:var(--color-accent)}.field__options{display:flex;flex-wrap:wrap;gap:var(--space-1) var(--space-3)}.field__option{display:inline-flex;align-items:center;gap:var(--space-2);min-height:var(--target);padding:0 var(--space-3) 0 var(--space-2);border-radius:var(--radius-small);cursor:pointer}.field__option:hover{background-color:var(--color-surface-alt)}.field__radio{width:18px;height:18px;margin:0;accent-color:var(--color-accent)}.button{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);min-height:var(--target);padding:0 20px;border:1px solid var(--color-accent);border-radius:var(--radius-small);background-color:var(--color-accent);color:var(--color-on-accent);font:inherit;font-weight:600;text-decoration:none;cursor:pointer;transition:transform 0.15s ease}.button:active{transform:scale(0.97)}.button[hidden]{display:none}.button:disabled{opacity:0.5;cursor:not-allowed}.button--secondary{border-color:var(--color-border-strong);background-color:transparent;color:var(--color-text)}.button--secondary:hover{border-color:var(--color-text)}.button--tertiary{padding:0 var(--space-2);border-color:transparent;background-color:transparent;color:var(--color-muted);font-weight:500;text-decoration:underline;text-underline-offset:4px}.button--tertiary:hover{color:var(--color-text)}.button--danger{border-color:var(--color-danger);background-color:transparent;color:var(--color-danger)}.button--small{min-height:var(--target);padding:0 14px;font-size:var(--text-sm)}@media (min-width:768px){.button--small{min-height:40px}}@media (prefers-reduced-motion:reduce){.button{transition:none}}@media (forced-colors:active){.field__input--select{appearance:auto;background-image:none}}.callout{display:flex;flex-direction:column;gap:var(--space-1);padding:var(--space-3) var(--space-4);border:1px solid var(--color-border);border-left:4px solid var(--color-warning);border-radius:var(--radius-small);background-color:var(--color-bg)}.callout__title{margin:0;font-size:var(--text-sm);font-weight:700}.callout__text{margin:0;color:var(--color-muted);font-size:var(--text-sm)}.result{margin:0;padding:14px var(--space-4);border-left:4px solid var(--color-border);border-radius:var(--radius-small);background-color:var(--color-surface-alt)}.result:empty{display:none}.result--success{border-left-color:var(--color-success)}.result--error{border-left-color:var(--color-danger)}.result--warning{border-left-color:var(--color-warning)}.result--success::before,.result--error::before,.result--warning::before{display:inline-block;width:1.25em;font-weight:700}.result--success::before{content:"✓";content:"✓" / "";color:var(--color-success)}.result--error::before{content:"✕";content:"✕" / "";color:var(--color-danger)}.result--warning::before{content:"!";content:"!" / "";color:var(--color-warning)}.result__action{min-height:40px;margin-left:var(--space-2);padding:0 var(--space-3);border:1px solid var(--color-border-strong);border-radius:var(--radius-small);background-color:transparent;color:var(--color-text);font:inherit;font-size:var(--text-sm);font-weight:600;cursor:pointer}.result__action:hover{border-color:var(--color-accent)}.highlight{color:var(--color-accent);font-weight:700}.highlight--warning{color:var(--color-warning)}@media (forced-colors:active){.result{border:1px solid CanvasText}}.training__container{display:flex;flex-direction:column;gap:var(--space-6);padding-top:var(--space-7);padding-left:4%;padding-right:4%}.training__head{display:flex;flex-direction:column;gap:var(--space-4)}.training__intro{display:flex;flex-direction:column;gap:var(--space-2)}.training__body{display:flex;flex-direction:column;gap:var(--space-3)}.training__title{margin:0;font-size:var(--text-xl);line-height:1.2}.training__text{margin:0;color:var(--color-muted)}.training__code{padding:1px 6px;border-radius:4px;background-color:var(--color-surface-alt);font-family:var(--font-mono);font-size:0.875em}.training__tags{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}.training__tag{padding:2px 10px;border:1px solid var(--color-border);border-radius:999px;color:var(--color-muted);font-family:var(--font-mono);font-size:var(--text-xs)}.training__panel{display:flex;flex-direction:column;gap:var(--space-4);padding:20px;border:1px solid var(--color-border);border-radius:var(--radius);background-color:var(--color-surface)}.training__panel[hidden]{display:none}.code{display:flex;flex-direction:column;gap:var(--space-3);min-width:0}.code__toolbar{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:var(--space-2) var(--space-4)}.code__files{display:flex;flex-wrap:wrap;gap:6px}.code__copy{flex:0 0 auto;display:inline-flex;align-items:center;gap:var(--space-2);min-height:var(--target);padding:0 var(--space-4);border:1px solid var(--color-border-strong);border-radius:var(--radius-small);background-color:transparent;color:var(--color-text);font:inherit;font-size:var(--text-sm);font-weight:600;cursor:pointer}.code__copy:hover{border-color:var(--color-accent)}.code__copy:disabled{opacity:0.5;cursor:not-allowed}.code__copy--done{border-color:var(--color-success);color:var(--color-success)}.code__file{min-height:var(--target);padding:0 var(--space-3);border:1px solid var(--color-border-strong);border-radius:var(--radius-small);background-color:var(--color-surface-alt);color:var(--color-muted);font-family:var(--font-mono);font-size:var(--text-sm);cursor:pointer}.code__file--active{border-color:var(--color-accent);color:var(--color-text)}.code__block{max-height:480px;margin:0;padding:var(--space-4);overflow:auto;border-radius:var(--radius-small);background-color:var(--color-bg);font-family:var(--font-mono);font-size:var(--text-sm);line-height:1.6;tab-size:4;scrollbar-width:thin}@media (min-width:768px){.training__container{padding-left:6%;padding-right:6%}.training__panel{padding:28px}.code__file,.code__copy{min-height:40px}}@media (min-width:1200px){.training__container{width:1140px;padding-left:0;padding-right:0;margin-left:auto;margin-right:auto}}@media (forced-colors:active){.code__file--active{border-color:Highlight;outline:2px solid Highlight}}.notes__container{display:flex;flex-direction:column;gap:20px;padding-top:var(--space-5);padding-left:4%;padding-right:4%}.notes__toolbar{display:flex;flex-wrap:wrap;align-items:flex-end;gap:var(--space-3) 20px}.notes__count{margin:0;padding-bottom:var(--space-3);color:var(--color-muted);font-size:var(--text-sm)}.notes__grid{display:grid;grid-template-columns:1fr;align-items:start;gap:var(--space-4)}.notes__empty{margin:0;color:var(--color-muted)}.notes__empty[hidden]{display:none}.note{display:flex;flex-direction:column;gap:var(--space-4);min-width:0;padding:20px;border:1px solid var(--color-border);border-radius:var(--radius);background-color:var(--color-surface)}.note[hidden]{display:none}.note__head{display:flex;flex-direction:column;gap:6px}.note__title{margin:0;font-size:var(--text-lg)}.note__body{display:flex;flex-direction:column;gap:10px;min-width:0}.note__body[hidden]{display:none}.note__subtitle{margin:0;padding-top:6px;color:var(--color-accent);font-size:var(--text-sm);letter-spacing:0.04em;text-transform:uppercase}.note__text{margin:0;color:var(--color-muted);font-size:var(--text-md)}.note__list{display:flex;flex-direction:column;gap:6px;margin:0;padding-left:18px;font-size:var(--text-md)}.note__term{color:var(--color-text)}.note__code{padding:1px 6px;border-radius:4px;background-color:var(--color-surface-alt);font-family:var(--font-mono);font-size:0.875em}.snippet{display:flex;align-items:flex-start;gap:var(--space-2);padding:10px 10px 10px 14px;border-radius:var(--radius-small);background-color:var(--color-bg)}.snippet__code{flex:1 1 auto;min-width:0;margin:0;padding-top:10px;font-family:var(--font-mono);white-space:pre-wrap;overflow-wrap:anywhere;font-size:var(--text-sm);line-height:1.6}.snippet__copy{flex:0 0 auto;min-width:72px;min-height:48px;border:1px solid var(--color-border-strong);border-radius:var(--radius-small);background-color:var(--color-surface-alt);color:var(--color-muted);font:inherit;font-size:var(--text-sm);cursor:pointer}.snippet__copy:hover{border-color:var(--color-accent);color:var(--color-text)}.snippet__copy--done{border-color:var(--color-success);color:var(--color-success)}@media (min-width:768px){.notes__container{padding-left:6%;padding-right:6%}.notes__grid{grid-template-columns:1fr 1fr}.note{padding:var(--space-5)}}@media (min-width:1200px){.notes__container{width:1140px;padding-left:0;padding-right:0;margin-left:auto;margin-right:auto}}</style>
+    <script src="assets/js/app.01902239.js" defer></script>
+</head>
+<body class="page" id="top">
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+    <header class="topbar">
+        <div class="topbar__container">
+            <a class="topbar__brand" href="../index.html" aria-label="itstfs — página inicial">
+                <img class="topbar__logo" src="assets/img/logo-64.webp" srcset="assets/img/logo-64.webp 1x, assets/img/logo-128.webp 2x" width="32" height="32" alt="">
+                <span class="topbar__name">itstfs</span>
+            </a>
+            <nav class="topbar__nav" aria-label="Interfaces">
+                <ul class="topbar__list">
+                    <li><a class="topbar__link" href="../arcade/">Arcade</a></li>
+                    <li><a class="topbar__link" href="../ferramentas/">Ferramentas</a></li>
+                    <li><a class="topbar__link" href="../excel/">Excel</a></li>
+                    <li><a class="topbar__link" href="../poo/">POO</a></li>
+                    <li><a class="topbar__link" href="../notas/" aria-current="page">Notas</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" type="button" data-theme-toggle>
+                <svg class="theme-toggle__icon" data-theme-icon="light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                <svg class="theme-toggle__icon" data-theme-icon="dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <span class="theme-toggle__label">Tema claro</span>
+            </button>
+        </div>
+    </header>
+    <main class="page__main" id="main">
+        <section class="hero">
+            <div class="hero__container">
+                <nav class="breadcrumb" aria-label="Você está aqui">
+                    <ol class="breadcrumb__list">
+                        <li class="breadcrumb__item"><a class="breadcrumb__link" href="../index.html">Início</a></li>
+                        <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">Notas</li>
+                    </ol>
+                </nav>
+                <h1 class="hero__title">Notas</h1>
+                <p class="hero__text">Anotações de aula transformadas em resumos: busque um termo, copie um comando e consulte o arquivo original quando quiser.</p>
+            </div>
+        </section>
+
+        <section class="notes">
+            <div class="notes__container">
+                <div class="notes__toolbar">
+                    <div class="field">
+                        <label class="field__label" for="notes-search">Buscar nas notas</label>
+                        <input class="field__input" id="notes-search" type="search" placeholder="ex.: migrate, cardinalidade, spoiler…" autocomplete="off" data-notes-search>
+                    </div>
+                    <p class="notes__count" data-notes-count aria-live="polite">7 notas</p>
+                </div>
+
+                <div class="notes__grid">
+                    <article class="note" data-note>
+                        <div class="note__head">
+                            <h2 class="note__title">Banco de dados</h2>
+                            <ul class="training__tags">
+                                <li class="training__tag">modelagem</li>
+                                <li class="training__tag">MER / DER</li>
+                            </ul>
+                        </div>
+                        <div class="note__body">
+                            <h3 class="note__subtitle">Níveis de abstração</h3>
+                            <ul class="note__list">
+                                <li class="note__item"><strong class="note__term">Conceitual</strong> — primeiro diagrama: entidades, atributos e relacionamentos.</li>
+                                <li class="note__item"><strong class="note__term">Lógico</strong> — já tem cara de tabela.</li>
+                                <li class="note__item"><strong class="note__term">Físico</strong> — migrando para o código SQL, com mais definição (sem index).</li>
+                            </ul>
+                            <h3 class="note__subtitle">Conceitos</h3>
+                            <ul class="note__list">
+                                <li class="note__item"><strong class="note__term">Entidade</strong> — algo do mundo real, abstrato ou físico, levado para o mundo virtual.</li>
+                                <li class="note__item"><strong class="note__term">Relacionamento</strong> — ligação entre entidades; tem cardinalidade (0:1, 1:1, 1:n, n:n, 0:n).</li>
+                                <li class="note__item"><strong class="note__term">Chave primária</strong> — identificador único, como um id.</li>
+                                <li class="note__item"><strong class="note__term">Chave estrangeira</strong> — no 1:n, um lado “doa” o atributo para o outro.</li>
+                                <li class="note__item"><strong class="note__term">1:1</strong> — as entidades trocam chaves primárias.</li>
+                                <li class="note__item"><strong class="note__term">n:n</strong> — o relacionamento vira uma entidade (entidade fraca).</li>
+                                <li class="note__item"><strong class="note__term">MER</strong> — Modelo Entidade Relacionamento: o conceito.</li>
+                                <li class="note__item"><strong class="note__term">DER</strong> — Diagrama Entidade Relacionamento: como desenhar.</li>
+                            </ul>
+                            <h3 class="note__subtitle">Tipos e colunas</h3>
+                            <ul class="note__list">
+                                <li class="note__item"><code class="note__code">varchar(50)</code> — salva só os caracteres usados (“Thaiza” = 6).</li>
+                                <li class="note__item"><code class="note__code">char(50)</code> — ocupa as 50 posições sempre.</li>
+                                <li class="note__item"><code class="note__code">int auto_increment</code> — cresce de um em um.</li>
+                                <li class="note__item"><code class="note__code">not null</code> — campo obrigatório.</li>
+                                <li class="note__item"><code class="note__code">use nome_banco</code> — seleciona o banco para os próximos comandos.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="note" data-note>
+                        <div class="note__head">
+                            <h2 class="note__title">MySQL</h2>
+                            <ul class="training__tags">
+                                <li class="training__tag">SQL</li>
+                                <li class="training__tag">consultas</li>
+                            </ul>
+                        </div>
+                        <div class="switch" role="tablist" aria-label="MySQL">
+                            <button class="switch__option switch__option--active" type="button" role="tab" id="mysql-summary-tab" aria-controls="mysql-summary" aria-selected="true">Resumo</button>
+                            <button class="switch__option" type="button" role="tab" id="mysql-source-tab" aria-controls="mysql-source" aria-selected="false" tabindex="-1">Arquivo original</button>
+                        </div>
+                        <div class="note__body" id="mysql-summary" role="tabpanel" aria-labelledby="mysql-summary-tab">
+                            <h3 class="note__subtitle">Consultar</h3>
+                            <div class="snippet"><pre class="snippet__code">SELECT * FROM tb_tabela WHERE preco &gt; 300;</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <p class="note__text">Produtos com preço maior que 300. Com <code class="note__code">count(*)</code> no lugar de <code class="note__code">*</code>, retorna o total.</p>
+                            <div class="snippet"><pre class="snippet__code">SELECT * FROM tb_tabela ORDER BY id DESC;</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <p class="note__text"><code class="note__code">DESC</code> do maior para o menor; <code class="note__code">ASC</code> do menor para o maior.</p>
+                            <div class="snippet"><pre class="snippet__code">SELECT SUM(preco) FROM tb_tabela WHERE marca = 'Canon';</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <div class="snippet"><pre class="snippet__code">SELECT MAX(preco), MIN(preco) FROM tb_tabela;</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <div class="snippet"><pre class="snippet__code">SELECT * FROM funcionarios
+WHERE salario = (SELECT MAX(salario) FROM funcionarios)
+   OR salario = (SELECT MIN(salario) FROM funcionarios);</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <p class="note__text">Maior e menor salário junto com os nomes (subconsulta).</p>
+                            <div class="snippet"><pre class="snippet__code">SELECT marca, SUM(preco), SUM(quantidade)
+FROM tb_tabela GROUP BY marca;</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <div class="snippet"><pre class="snippet__code">SELECT ROUND(AVG(idade)) FROM medicos;</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <div class="snippet"><pre class="snippet__code">SELECT nome, (salario - salario * 0.2) FROM funcionarios;</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <p class="note__text">Salário líquido descontando 20%.</p>
+                            <h3 class="note__subtitle">Inserir e atualizar</h3>
+                            <div class="snippet"><pre class="snippet__code">INSERT INTO medicos
+VALUES (6, 'Bi', 79, 'cardiologista', '1111111', 'São Paulo', 5);</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <div class="snippet"><pre class="snippet__code">UPDATE medicos
+SET especialidade = 'ortopedia'
+WHERE cod_m = 1;</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <p class="note__text">⚠️ Sem o <code class="note__code">WHERE</code>, todos os médicos viram ortopedistas.</p>
+                        </div>
+                        <div class="note__body" id="mysql-source" role="tabpanel" aria-labelledby="mysql-source-tab" hidden>
+                            <div class="code">
+                                <div class="code__toolbar">
+                                    <div class="code__files">
+                                        <button class="code__file" type="button" data-src="source/anotações/mysql.txt">anotações/mysql.txt</button>
+                                    </div>
+                                    <button class="code__copy" type="button" disabled><span class="code__copy-label">Copiar código</span></button>
+                                </div>
+                                <p class="visually-hidden code__status" aria-live="polite"></p>
+                                <pre class="code__block" tabindex="0"><code class="code__content"></code></pre>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="note" data-note>
+                        <div class="note__head">
+                            <h2 class="note__title">Django</h2>
+                            <ul class="training__tags">
+                                <li class="training__tag">Python</li>
+                                <li class="training__tag">backend</li>
+                            </ul>
+                        </div>
+                        <div class="switch" role="tablist" aria-label="Django">
+                            <button class="switch__option switch__option--active" type="button" role="tab" id="django-summary-tab" aria-controls="django-summary" aria-selected="true">Resumo</button>
+                            <button class="switch__option" type="button" role="tab" id="django-source-tab" aria-controls="django-source" aria-selected="false" tabindex="-1">Arquivo original</button>
+                        </div>
+                        <div class="note__body" id="django-summary" role="tabpanel" aria-labelledby="django-summary-tab">
+                            <h3 class="note__subtitle">Ambiente virtual (PowerShell)</h3>
+                            <div class="snippet"><pre class="snippet__code">py -m venv env
+.\env\Scripts\Activate.ps1</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <p class="note__text">Se o PowerShell bloquear scripts:</p>
+                            <div class="snippet"><pre class="snippet__code">Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <h3 class="note__subtitle">Projeto e app</h3>
+                            <div class="snippet"><pre class="snippet__code">pip install django
+django-admin startproject nomepasta
+py .\manage.py startapp home
+py .\manage.py runserver</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <h3 class="note__subtitle">Models e admin</h3>
+                            <div class="snippet"><pre class="snippet__code">py .\manage.py makemigrations
+py .\manage.py migrate
+py .\manage.py createsuperuser</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <p class="note__text"><code class="note__code">makemigrations</code> mapeia, <code class="note__code">migrate</code> grava no banco.</p>
+                            <h3 class="note__subtitle">Dependências</h3>
+                            <div class="snippet"><pre class="snippet__code">pip install gunicorn whitenoise djangorestframework django-bootstrap-v5 pillow stdimage
+pip freeze &gt; requirements.txt</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <p class="note__text">Em <code class="note__code">INSTALLED_APPS</code>: <code class="note__code">'home'</code>, <code class="note__code">'rest_framework'</code>, <code class="note__code">'bootstrap5'</code>.</p>
+                        </div>
+                        <div class="note__body" id="django-source" role="tabpanel" aria-labelledby="django-source-tab" hidden>
+                            <div class="code">
+                                <div class="code__toolbar">
+                                    <div class="code__files">
+                                        <button class="code__file" type="button" data-src="source/anotações/django.txt">anotações/django.txt</button>
+                                    </div>
+                                    <button class="code__copy" type="button" disabled><span class="code__copy-label">Copiar código</span></button>
+                                </div>
+                                <p class="visually-hidden code__status" aria-live="polite"></p>
+                                <pre class="code__block" tabindex="0"><code class="code__content"></code></pre>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="note" data-note>
+                        <div class="note__head">
+                            <h2 class="note__title">React</h2>
+                            <ul class="training__tags">
+                                <li class="training__tag">JavaScript</li>
+                                <li class="training__tag">frontend</li>
+                            </ul>
+                        </div>
+                        <div class="switch" role="tablist" aria-label="React">
+                            <button class="switch__option switch__option--active" type="button" role="tab" id="react-summary-tab" aria-controls="react-summary" aria-selected="true">Resumo</button>
+                            <button class="switch__option" type="button" role="tab" id="react-source-tab" aria-controls="react-source" aria-selected="false" tabindex="-1">Arquivo original</button>
+                        </div>
+                        <div class="note__body" id="react-summary" role="tabpanel" aria-labelledby="react-summary-tab">
+                            <h3 class="note__subtitle">Comandos</h3>
+                            <div class="snippet"><pre class="snippet__code">npx create-react-app nomedesejado
+code .
+npm start</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <h3 class="note__subtitle">Conceitos</h3>
+                            <ul class="note__list">
+                                <li class="note__item"><strong class="note__term">JSX</strong> — junta JavaScript com HTML.</li>
+                                <li class="note__item"><strong class="note__term">&lt;&gt;&lt;/&gt;</strong> — Fragment: agrupa sem criar uma <code class="note__code">div</code> no HTML.</li>
+                                <li class="note__item"><strong class="note__term">state</strong> — guarda as variáveis do componente de forma privada.</li>
+                                <li class="note__item"><strong class="note__term">props</strong> — propriedades passadas para o componente.</li>
+                                <li class="note__item"><strong class="note__term">className</strong> — porque <code class="note__code">class</code> é palavra reservada.</li>
+                                <li class="note__item"><strong class="note__term">arrow function</strong> — <code class="note__code">= () =&gt; {}</code> evita criar construtor e <code class="note__code">super</code>.</li>
+                                <li class="note__item"><strong class="note__term">SPA</strong> — Single Page Application: um só HTML, o JavaScript troca as telas; o caminho na URL é a rota.</li>
+                                <li class="note__item"><strong class="note__term">UI / UX</strong> — interface do usuário / experiência ao usar a interface.</li>
+                            </ul>
+                        </div>
+                        <div class="note__body" id="react-source" role="tabpanel" aria-labelledby="react-source-tab" hidden>
+                            <div class="code">
+                                <div class="code__toolbar">
+                                    <div class="code__files">
+                                        <button class="code__file" type="button" data-src="source/anotações/react.txt">anotações/react.txt</button>
+                                    </div>
+                                    <button class="code__copy" type="button" disabled><span class="code__copy-label">Copiar código</span></button>
+                                </div>
+                                <p class="visually-hidden code__status" aria-live="polite"></p>
+                                <pre class="code__block" tabindex="0"><code class="code__content"></code></pre>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="note" data-note>
+                        <div class="note__head">
+                            <h2 class="note__title">React Native</h2>
+                            <ul class="training__tags">
+                                <li class="training__tag">Expo</li>
+                                <li class="training__tag">navegação</li>
+                            </ul>
+                        </div>
+                        <div class="switch" role="tablist" aria-label="React Native">
+                            <button class="switch__option switch__option--active" type="button" role="tab" id="native-summary-tab" aria-controls="native-summary" aria-selected="true">Resumo</button>
+                            <button class="switch__option" type="button" role="tab" id="native-source-tab" aria-controls="native-source" aria-selected="false" tabindex="-1">Arquivo original</button>
+                        </div>
+                        <div class="note__body" id="native-summary" role="tabpanel" aria-labelledby="native-summary-tab">
+                            <h3 class="note__subtitle">Iniciar</h3>
+                            <div class="snippet"><pre class="snippet__code">npm install -g yarn
+npm install
+expo start</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <h3 class="note__subtitle">React Navigation</h3>
+                            <div class="snippet"><pre class="snippet__code">npm install @react-navigation/native
+npm install react-native-screens
+npx expo install react-native-safe-area-context
+npm install @react-navigation/native-stack
+npm install @react-navigation/stack
+npm install @react-navigation/bottom-tabs</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                        </div>
+                        <div class="note__body" id="native-source" role="tabpanel" aria-labelledby="native-source-tab" hidden>
+                            <div class="code">
+                                <div class="code__toolbar">
+                                    <div class="code__files">
+                                        <button class="code__file" type="button" data-src="source/anotações/native.txt">anotações/native.txt</button>
+                                    </div>
+                                    <button class="code__copy" type="button" disabled><span class="code__copy-label">Copiar código</span></button>
+                                </div>
+                                <p class="visually-hidden code__status" aria-live="polite"></p>
+                                <pre class="code__block" tabindex="0"><code class="code__content"></code></pre>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="note" data-note>
+                        <div class="note__head">
+                            <h2 class="note__title">npm e mobile</h2>
+                            <ul class="training__tags">
+                                <li class="training__tag">Node</li>
+                                <li class="training__tag">SemVer</li>
+                                <li class="training__tag">apps</li>
+                            </ul>
+                        </div>
+                        <div class="switch" role="tablist" aria-label="npm e mobile">
+                            <button class="switch__option switch__option--active" type="button" role="tab" id="mobile-summary-tab" aria-controls="mobile-summary" aria-selected="true">Resumo</button>
+                            <button class="switch__option" type="button" role="tab" id="mobile-source-tab" aria-controls="mobile-source" aria-selected="false" tabindex="-1">Arquivo original</button>
+                        </div>
+                        <div class="note__body" id="mobile-summary" role="tabpanel" aria-labelledby="mobile-summary-tab">
+                            <h3 class="note__subtitle">npm</h3>
+                            <div class="snippet"><pre class="snippet__code">npm init -y</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <p class="note__text">Gera o <code class="note__code">package.json</code> (configuração do projeto) sem o questionário. Principais comandos: install, update, version, config.</p>
+                            <ul class="note__list">
+                                <li class="note__item"><strong class="note__term">dependencies</strong> — software de terceiros que o projeto precisa para funcionar (ex.: Router, Redux, Axios).</li>
+                                <li class="note__item"><strong class="note__term">devDependencies</strong> — ajudam quem desenvolve; o projeto roda sem elas (ex.: ESLint, TypeScript, Storybook).</li>
+                                <li class="note__item"><strong class="note__term">Gerenciadores</strong> — Windows: Chocolatey · Linux: apt / pacman · macOS: Homebrew.</li>
+                            </ul>
+                            <h3 class="note__subtitle">SemVer</h3>
+                            <ul class="note__list">
+                                <li class="note__item"><strong class="note__term">Patch</strong> — correção de bug ou performance, mantendo compatibilidade.</li>
+                                <li class="note__item"><strong class="note__term">Minor</strong> — novas funcionalidades pequenas, mantendo compatibilidade.</li>
+                                <li class="note__item"><strong class="note__term">Major</strong> — mudanças incompatíveis com a API atual.</li>
+                            </ul>
+                            <h3 class="note__subtitle">Nativo × PWA × Híbrido</h3>
+                            <ul class="note__list">
+                                <li class="note__item"><strong class="note__term">Nativo</strong> (Swift/Objective-C, Java/Kotlin) — quando segurança, performance e recursos do aparelho importam. Mais caro: duas linguagens e duas equipes.</li>
+                                <li class="note__item"><strong class="note__term">PWA</strong> — site que se comporta como app; não ocupa espaço, curva de aprendizado pequena, mas pouco acesso a recursos.</li>
+                                <li class="note__item"><strong class="note__term">Híbrido</strong> (ex.: React Native) — um código para todas as plataformas; rápido e barato, menos seguro que o nativo.</li>
+                            </ul>
+                        </div>
+                        <div class="note__body" id="mobile-source" role="tabpanel" aria-labelledby="mobile-source-tab" hidden>
+                            <div class="code">
+                                <div class="code__toolbar">
+                                    <div class="code__files">
+                                        <button class="code__file" type="button" data-src="source/anotações/mobile.txt">anotações/mobile.txt</button>
+                                    </div>
+                                    <button class="code__copy" type="button" disabled><span class="code__copy-label">Copiar código</span></button>
+                                </div>
+                                <p class="visually-hidden code__status" aria-live="polite"></p>
+                                <pre class="code__block" tabindex="0"><code class="code__content"></code></pre>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="note" data-note>
+                        <div class="note__head">
+                            <h2 class="note__title">Formatação do Discord</h2>
+                            <ul class="training__tags">
+                                <li class="training__tag">Markdown</li>
+                                <li class="training__tag">cores em code block</li>
+                            </ul>
+                        </div>
+                        <div class="switch" role="tablist" aria-label="Formatação do Discord">
+                            <button class="switch__option switch__option--active" type="button" role="tab" id="discord-summary-tab" aria-controls="discord-summary" aria-selected="true">Resumo</button>
+                            <button class="switch__option" type="button" role="tab" id="discord-source-tab" aria-controls="discord-source" aria-selected="false" tabindex="-1">Arquivo original</button>
+                        </div>
+                        <div class="note__body" id="discord-summary" role="tabpanel" aria-labelledby="discord-summary-tab">
+                            <h3 class="note__subtitle">Texto</h3>
+                            <div class="snippet"><pre class="snippet__code">||spoiler||</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <div class="snippet"><pre class="snippet__code">**negrito**  *itálico*  __sublinhado__</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <div class="snippet"><pre class="snippet__code"># título
+&gt; citação</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <h3 class="note__subtitle">Texto colorido com blocos de código</h3>
+                            <div class="snippet"><pre class="snippet__code">```diff
+- texto vermelho
++ texto verde
+```</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <div class="snippet"><pre class="snippet__code">```fix
+texto amarelo
+```</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <div class="snippet"><pre class="snippet__code">```css
+[texto laranja]
+.texto
+```</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                            <div class="snippet"><pre class="snippet__code">```bash
+"texto ciano"
+```</pre><button class="snippet__copy" type="button">Copiar</button></div>
+                        </div>
+                        <div class="note__body" id="discord-source" role="tabpanel" aria-labelledby="discord-source-tab" hidden>
+                            <div class="code">
+                                <div class="code__toolbar">
+                                    <div class="code__files">
+                                        <button class="code__file" type="button" data-src="source/discord-letters/texts.md">discord-letters/texts.md</button>
+                                    </div>
+                                    <button class="code__copy" type="button" disabled><span class="code__copy-label">Copiar código</span></button>
+                                </div>
+                                <p class="visually-hidden code__status" aria-live="polite"></p>
+                                <pre class="code__block" tabindex="0"><code class="code__content"></code></pre>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="notes__empty" data-notes-empty hidden>Nenhuma nota encontrada.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__brand">
+                <a class="footer__home" href="../index.html">
+                    <img class="footer__logo" src="assets/img/logo-64.webp" srcset="assets/img/logo-64.webp 1x, assets/img/logo-128.webp 2x" width="32" height="32" alt="" loading="lazy" decoding="async">
+                    <span class="footer__name">itstfs</span>
+                </a>
+                <p class="footer__text">Treinos de programação em Python, Java, JavaScript, HTML, CSS e SQL, recriados para rodar no navegador.</p>
+                <!-- Decoration only: the languages are already named in the text above -->
+                <ul class="footer__stack" aria-hidden="true">
+                    <li class="footer__lang"><svg class="footer__lang-icon" viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg></li>
+                    <li class="footer__lang"><svg class="footer__lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg></li>
+                    <li class="footer__lang"><svg class="footer__lang-icon" viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg></li>
+                    <li class="footer__lang"><svg class="footer__lang-icon" viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg></li>
+                    <li class="footer__lang"><svg class="footer__lang-icon" viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"/></svg></li>
+                    <li class="footer__lang"><svg class="footer__lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg></li>
+                </ul>
+            </div>
+            <nav class="footer__nav" aria-labelledby="footer-nav-title">
+                <h2 class="footer__title" id="footer-nav-title">Redes</h2>
+                <ul class="footer__list">
+                    <li>
+                        <a class="footer__link" href="https://www.instagram.com/tfavarelli/" target="_blank" rel="noopener noreferrer">
+                            <svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+                            Instagram<span class="visually-hidden"> (abre em nova aba)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="footer__link" href="https://www.linkedin.com/in/thaiza-favarelli-da-silva/" target="_blank" rel="noopener noreferrer">
+                            <svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><path d="M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                            LinkedIn<span class="visually-hidden"> (abre em nova aba)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="footer__link" href="https://www.youtube.com/@itstfs" target="_blank" rel="noopener noreferrer">
+                            <svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+                            YouTube<span class="visually-hidden"> (abre em nova aba)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="footer__link" href="https://github.com/itstfs" target="_blank" rel="noopener noreferrer">
+                            <svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                            GitHub<span class="visually-hidden"> (abre em nova aba)</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="footer__bottom">
+                <p class="footer__copy">© 2026 itstfs</p>
+                <a class="footer__top" href="#top">↑ Voltar ao topo</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

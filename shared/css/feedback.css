@@ -1,0 +1,117 @@
+/* ==========================================================================
+   Layer 6 of 7 · Feedback — telling the user what happened
+   Result messages (icon + text), callout and highlight.
+   Pages link this file directly (no sync needed); tools/build.mjs inlines it in dist/.
+   ========================================================================== */
+
+/* Callout ----------------------------------------------------------------- */
+
+.callout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-warning);
+    border-radius: var(--radius-small);
+    background-color: var(--color-bg);
+}
+
+.callout__title {
+    margin: 0;
+    font-size: var(--text-sm);
+    font-weight: 700;
+}
+
+.callout__text {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+}
+
+/* Result message: icon + text, never color alone ---------------------------------- */
+
+.result {
+    margin: 0;
+    padding: 14px var(--space-4);
+    border-left: 4px solid var(--color-border);
+    border-radius: var(--radius-small);
+    background-color: var(--color-surface-alt);
+}
+
+.result:empty {
+    display: none;
+}
+
+.result--success {
+    border-left-color: var(--color-success);
+}
+
+.result--error {
+    border-left-color: var(--color-danger);
+}
+
+.result--warning {
+    border-left-color: var(--color-warning);
+}
+
+.result--success::before,
+.result--error::before,
+.result--warning::before {
+    display: inline-block;
+    width: 1.25em;
+    font-weight: 700;
+}
+
+.result--success::before {
+    content: "✓";
+    content: "✓" / "";
+    color: var(--color-success);
+}
+
+.result--error::before {
+    content: "✕";
+    content: "✕" / "";
+    color: var(--color-danger);
+}
+
+.result--warning::before {
+    content: "!";
+    content: "!" / "";
+    color: var(--color-warning);
+}
+
+/* Inline action inside a result message (e.g. "Desfazer") */
+.result__action {
+    min-height: 40px;
+    margin-left: var(--space-2);
+    padding: 0 var(--space-3);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-small);
+    background-color: transparent;
+    color: var(--color-text);
+    font: inherit;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.result__action:hover {
+    border-color: var(--color-accent);
+}
+
+.highlight {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+.highlight--warning {
+    color: var(--color-warning);
+}
+
+/* Windows high contrast: keep the message box visible */
+@media (forced-colors: active) {
+    .result {
+        border: 1px solid CanvasText;
+    }
+}

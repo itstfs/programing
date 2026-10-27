@@ -1,0 +1,23 @@
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+<header class="topbar">
+    <div class="topbar__container">
+        <a class="topbar__brand" href="{{root}}index.html"{{current:home}} aria-label="itstfs — página inicial">
+            <img class="topbar__logo" src="{{shared}}img/logo-64.webp" srcset="{{shared}}img/logo-64.webp 1x, {{shared}}img/logo-128.webp 2x" width="32" height="32" alt="">
+            <span class="topbar__name">itstfs</span>
+        </a>
+        <nav class="topbar__nav" aria-label="Interfaces">
+            <ul class="topbar__list">
+                <li><a class="topbar__link" href="{{root}}arcade/"{{current:arcade}}>Arcade</a></li>
+                <li><a class="topbar__link" href="{{root}}ferramentas/"{{current:ferramentas}}>Ferramentas</a></li>
+                <li><a class="topbar__link" href="{{root}}excel/"{{current:excel}}>Excel</a></li>
+                <li><a class="topbar__link" href="{{root}}poo/"{{current:poo}}>POO</a></li>
+                <li><a class="topbar__link" href="{{root}}notas/"{{current:notas}}>Notas</a></li>
+            </ul>
+        </nav>
+        <button class="theme-toggle" type="button" data-theme-toggle>
+            <svg class="theme-toggle__icon" data-theme-icon="light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            <svg class="theme-toggle__icon" data-theme-icon="dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <span class="theme-toggle__label">Tema claro</span>
+        </button>
+    </div>
+</header>

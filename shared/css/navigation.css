@@ -1,0 +1,196 @@
+/* ==========================================================================
+   Layer 4 of 7 · Navigation — moving around
+   Breadcrumb, "Nesta página" index, view switch, operation tabs and theme toggle.
+   Pages link this file directly (no sync needed); tools/build.mjs inlines it in dist/.
+   ========================================================================== */
+
+/* Breadcrumb ---------------------------------------------------------------- */
+
+.breadcrumb__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: var(--text-sm);
+}
+
+.breadcrumb__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    color: var(--color-accent);
+    text-underline-offset: 3px;
+}
+
+.breadcrumb__item--current {
+    color: var(--color-muted);
+}
+
+.breadcrumb__item--current::before {
+    content: "/";
+    padding-right: var(--space-2);
+    color: var(--color-border-strong);
+}
+
+/* Table of contents ("Nesta página") ------------------------------------------- */
+
+.toc {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--space-1) var(--space-3);
+    padding-top: var(--space-2);
+}
+
+.toc__label {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.toc__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--space-1);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.toc__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--target);
+    padding: 0 var(--space-2);
+    color: var(--color-text);
+    text-decoration: underline;
+    text-decoration-color: var(--color-border-strong);
+    text-underline-offset: 4px;
+}
+
+.toc__link:hover {
+    text-decoration-color: var(--color-accent);
+}
+
+/* Segmented control — switches between views (Testar / Código original) ------------ */
+
+.switch {
+    display: inline-flex;
+    align-self: flex-start;
+    gap: var(--space-1);
+    padding: var(--space-1);
+    border: 1px solid var(--color-border-strong);
+    border-radius: 999px;
+    background-color: var(--color-bg);
+}
+
+.switch__option {
+    min-height: 40px;
+    padding: 0 var(--space-4);
+    border: 0;
+    border-radius: 999px;
+    background-color: transparent;
+    color: var(--color-muted);
+    font: inherit;
+    font-size: var(--text-sm);
+    cursor: pointer;
+}
+
+.switch__option:hover {
+    color: var(--color-text);
+}
+
+.switch__option--active {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+    font-weight: 600;
+}
+
+.switch__option--active:hover {
+    color: var(--color-on-accent);
+}
+
+/* Tabs — switch between operations inside a tool (underlined) -------------------- */
+
+/* Wraps instead of scrolling: every operation stays visible on small screens */
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--space-1);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.tabs__button {
+    flex: 0 0 auto;
+    min-height: var(--target);
+    padding: 0 var(--space-3);
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background-color: transparent;
+    color: var(--color-muted);
+    font: inherit;
+    font-size: var(--text-sm);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.tabs__button:hover {
+    color: var(--color-text);
+}
+
+.tabs__button--active {
+    border-bottom-color: var(--color-accent);
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+/* Theme toggle: the visible text says what the button will do */
+.theme-toggle {
+    grid-area: theme;
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: var(--target);
+    padding: 0 var(--space-4);
+    border: 0;
+    border-radius: 999px;
+    background-color: transparent;
+    color: var(--color-text);
+    font: inherit;
+    font-size: var(--text-sm);
+    cursor: pointer;
+}
+
+/* No border: the visible text already identifies the button; hover adds a surface */
+.theme-toggle:hover {
+    background-color: var(--color-surface-alt);
+}
+
+.theme-toggle__icon {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+}
+
+.theme-toggle__icon[hidden] {
+    display: none;
+}
+
+/* Windows high contrast: keep the active view/operation visible */
+@media (forced-colors: active) {
+    .switch__option--active,
+    .tabs__button--active {
+        border-color: Highlight;
+        outline: 2px solid Highlight;
+    }
+
+    .theme-toggle {
+        border: 1px solid ButtonText;
+    }
+}

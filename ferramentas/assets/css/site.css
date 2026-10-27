@@ -1,0 +1,101 @@
+/* CPF --------------------------------------------------------------------- */
+
+/* Icon beside the message (like the other results), steps below, spaced by gap */
+.cpf__result {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-2) 0;
+}
+
+.cpf__steps {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding-left: 20px;
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+}
+
+.cpf__message {
+    margin: 0;
+}
+
+/* Password ---------------------------------------------------------------- */
+
+.password__output {
+    font-family: var(--font-mono);
+    letter-spacing: 0.04em;
+}
+
+.password__length {
+    flex: 0 1 140px;
+}
+
+/* Code time --------------------------------------------------------------- */
+
+.code-time__output {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    white-space: pre-wrap;
+}
+
+.code-time__history {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    margin: 0;
+    padding-left: 20px;
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+}
+
+/* Crop -------------------------------------------------------------------- */
+
+.crop__upload {
+    position: relative;
+}
+
+.crop__upload:focus-within {
+    outline: 2px solid var(--color-text);
+    outline-offset: 2px;
+}
+
+.crop__field {
+    flex: 1 1 120px;
+}
+
+.crop__stage {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+}
+
+.crop__figure {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    min-width: 0;
+    margin: 0;
+}
+
+.crop__canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 120px;
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-small);
+    background-color: var(--color-bg);
+}
+
+.crop__caption {
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+}
+
+@media (min-width: 768px) {
+    .crop__stage {
+        grid-template-columns: 1fr 1fr;
+    }
+}

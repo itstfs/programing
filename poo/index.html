@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>POO — itstfs</title>
+    <meta name="description" content="Treinos de programação orientada a objetos em Java e Python recriados com classes em JavaScript: sistema escolar com herança e reajuste salarial, e assistente de computador e ambiente.">
+    <meta name="theme-color" content="#0e0e13">
+    <!-- shared:head -->
+    <link rel="icon" href="../shared/img/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="../shared/img/apple-touch-icon-180.png">
+    <script>try{if(localStorage.getItem("itstfs-theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
+    <!-- /shared:head -->
+    <!-- shared:assets -->
+    <link rel="stylesheet" href="../shared/css/settings.css">
+    <link rel="stylesheet" href="../shared/css/base.css">
+    <link rel="stylesheet" href="../shared/css/layout.css">
+    <link rel="stylesheet" href="../shared/css/navigation.css">
+    <link rel="stylesheet" href="../shared/css/forms.css">
+    <link rel="stylesheet" href="../shared/css/feedback.css">
+    <link rel="stylesheet" href="../shared/css/code.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <script src="../shared/js/header.js" defer></script>
+    <script src="../shared/js/tabs.js" defer></script>
+    <!-- /shared:assets -->
+    <script src="assets/js/school.js" defer></script>
+    <script src="assets/js/setup.js" defer></script>
+</head>
+<body class="page" id="top">
+    <!-- shared:header -->
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+    <header class="topbar">
+        <div class="topbar__container">
+            <a class="topbar__brand" href="../index.html" aria-label="itstfs — página inicial">
+                <img class="topbar__logo" src="../shared/img/logo-64.webp" srcset="../shared/img/logo-64.webp 1x, ../shared/img/logo-128.webp 2x" width="32" height="32" alt="">
+                <span class="topbar__name">itstfs</span>
+            </a>
+            <nav class="topbar__nav" aria-label="Interfaces">
+                <ul class="topbar__list">
+                    <li><a class="topbar__link" href="../arcade/">Arcade</a></li>
+                    <li><a class="topbar__link" href="../ferramentas/">Ferramentas</a></li>
+                    <li><a class="topbar__link" href="../excel/">Excel</a></li>
+                    <li><a class="topbar__link" href="../poo/" aria-current="page">POO</a></li>
+                    <li><a class="topbar__link" href="../notas/">Notas</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" type="button" data-theme-toggle>
+                <svg class="theme-toggle__icon" data-theme-icon="light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                <svg class="theme-toggle__icon" data-theme-icon="dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" hidden><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <span class="theme-toggle__label">Tema claro</span>
+            </button>
+        </div>
+    </header>
+    <!-- /shared:header -->
+    <main class="page__main" id="main">
+        <section class="hero">
+            <div class="hero__container">
+                <nav class="breadcrumb" aria-label="Você está aqui">
+                    <ol class="breadcrumb__list">
+                        <li class="breadcrumb__item"><a class="breadcrumb__link" href="../index.html">Início</a></li>
+                        <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">POO</li>
+                    </ol>
+                </nav>
+                <h1 class="hero__title">POO</h1>
+                <p class="hero__text">Classes, herança, encapsulamento e interfaces — treinados em Java e Python e reescritos aqui com <code class="training__code">class</code> e campos privados (<code class="training__code">#</code>) do JavaScript.</p>
+                <nav class="toc" aria-labelledby="toc-title">
+                    <p class="toc__label" id="toc-title">Nesta página</p>
+                    <ul class="toc__list">
+                        <li><a class="toc__link" href="#school">Sistema escolar</a></li>
+                        <li><a class="toc__link" href="#setup">Computador e ambiente</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <section class="training" id="school">
+            <div class="training__container">
+                <div class="training__head">
+                    <div class="training__intro">
+                        <h2 class="training__title">Sistema escolar</h2>
+                        <p class="training__text">Membro → Discente → Aluno/Monitor e Membro → Docente → Professor/Coordenador/Diretor. A disciplina “escuta” os alunos: com 60% ou mais de aprovação a equipe ganha aumento; abaixo de 50%, desconto.</p>
+                    </div>
+                    <ul class="training__tags">
+                        <li class="training__tag">Java</li>
+                        <li class="training__tag">herança</li>
+                        <li class="training__tag">interface</li>
+                        <li class="training__tag">ArrayList</li>
+                    </ul>
+                </div>
+                <div class="training__body">
+                    <div class="switch" role="tablist" aria-label="Sistema escolar">
+                        <button class="switch__option switch__option--active" type="button" role="tab" id="school-demo-tab" aria-controls="school-demo" aria-selected="true">Testar</button>
+                        <button class="switch__option" type="button" role="tab" id="school-code-tab" aria-controls="school-code" aria-selected="false" tabindex="-1">Código original</button>
+                    </div>
+                    <div class="training__panel" id="school-demo" role="tabpanel" aria-labelledby="school-demo-tab">
+                        <div class="school__summary">
+                            <div class="school__stat">
+                                <p class="school__stat-label">Aprovação da turma</p>
+                                <p class="school__stat-value" data-school-rate>0%</p>
+                            </div>
+                            <p class="result" data-school-rule aria-live="polite"></p>
+                        </div>
+
+                        <h3 class="school__subtitle">Turma</h3>
+                        <div class="sheet" tabindex="0" role="region" aria-label="Alunos da turma">
+                            <table class="sheet__table">
+                                <thead>
+                                    <tr>
+                                        <th class="sheet__head" scope="col">Nome</th>
+                                        <th class="sheet__head" scope="col">Email</th>
+                                        <th class="sheet__head" scope="col">Notas</th>
+                                        <th class="sheet__head" scope="col">Média</th>
+                                        <th class="sheet__head" scope="col">Presença</th>
+                                        <th class="sheet__head" scope="col">Status</th>
+                                        <th class="sheet__head" scope="col"><span class="visually-hidden">Ações</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody data-school-students></tbody>
+                            </table>
+                        </div>
+                        <p class="result" data-school-result aria-live="polite"></p>
+
+                        <form class="form school__form" data-school-form>
+                            <h3 class="school__subtitle">Matricular aluno</h3>
+                            <div class="form__row">
+                                <div class="field">
+                                    <label class="field__label" for="student-name">Nome</label>
+                                    <input class="field__input" id="student-name" name="studentName" type="text" required>
+                                </div>
+                                <div class="field">
+                                    <label class="field__label" for="student-email">Email</label>
+                                    <input class="field__input" id="student-email" name="studentEmail" type="email" required>
+                                </div>
+                                <div class="field school__field--small">
+                                    <label class="field__label" for="student-age">Idade</label>
+                                    <input class="field__input" id="student-age" name="studentAge" type="number" min="1" max="120" value="18" required>
+                                </div>
+                            </div>
+                            <div class="form__row">
+                                <div class="field school__field--small">
+                                    <label class="field__label" for="student-grade1">Nota 1</label>
+                                    <input class="field__input" id="student-grade1" name="grade1" type="number" min="0" max="10" step="0.1" required>
+                                </div>
+                                <div class="field school__field--small">
+                                    <label class="field__label" for="student-grade2">Nota 2</label>
+                                    <input class="field__input" id="student-grade2" name="grade2" type="number" min="0" max="10" step="0.1" required>
+                                </div>
+                                <div class="field school__field--small">
+                                    <label class="field__label" for="student-attendance">Presença (%)</label>
+                                    <input class="field__input" id="student-attendance" name="attendance" type="number" min="0" max="100" step="1" required>
+                                </div>
+                            </div>
+                            <div class="form__actions">
+                                <button class="button" type="submit">Matricular</button>
+                            </div>
+                        </form>
+
+                        <h3 class="school__subtitle">Equipe e reajuste</h3>
+                        <div class="sheet" tabindex="0" role="region" aria-label="Equipe e reajuste salarial">
+                            <table class="sheet__table">
+                                <thead>
+                                    <tr>
+                                        <th class="sheet__head" scope="col">Cargo</th>
+                                        <th class="sheet__head" scope="col">Nome</th>
+                                        <th class="sheet__head" scope="col">Detalhe</th>
+                                        <th class="sheet__head" scope="col">Salário base</th>
+                                        <th class="sheet__head" scope="col">Com reajuste</th>
+                                    </tr>
+                                </thead>
+                                <tbody data-school-staff></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="training__panel" id="school-code" role="tabpanel" aria-labelledby="school-code-tab" hidden>
+                        <div class="code">
+                            <div class="code__toolbar">
+                                <div class="code__files">
+                                    <button class="code__file" type="button" data-src="source/java/app/app.java">app/app.java</button>
+                                    <button class="code__file" type="button" data-src="source/java/classes/membro.java">membro.java</button>
+                                    <button class="code__file" type="button" data-src="source/java/classes/discente.java">discente.java</button>
+                                    <button class="code__file" type="button" data-src="source/java/classes/aluno.java">aluno.java</button>
+                                    <button class="code__file" type="button" data-src="source/java/classes/aluno-list.java">aluno-list.java</button>
+                                    <button class="code__file" type="button" data-src="source/java/classes/monitor.java">monitor.java</button>
+                                    <button class="code__file" type="button" data-src="source/java/classes/docente.java">docente.java</button>
+                                    <button class="code__file" type="button" data-src="source/java/classes/professor.java">professor.java</button>
+                                    <button class="code__file" type="button" data-src="source/java/classes/coordenador.java">coordenador.java</button>
+                                    <button class="code__file" type="button" data-src="source/java/classes/diretor.java">diretor.java</button>
+                                    <button class="code__file" type="button" data-src="source/java/classes/disciplina.java">disciplina.java</button>
+                                    <button class="code__file" type="button" data-src="source/java/classes/instituto.java">instituto.java</button>
+                                    <button class="code__file" type="button" data-src="source/java/classes/universidade.java">universidade.java</button>
+                                    <button class="code__file" type="button" data-src="source/java/classes/clear.java">clear.java</button>
+                                </div>
+                                <button class="code__copy" type="button" disabled><span class="code__copy-label">Copiar código</span></button>
+                            </div>
+                            <p class="visually-hidden code__status" aria-live="polite"></p>
+                            <pre class="code__block" tabindex="0"><code class="code__content"></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="training" id="setup">
+            <div class="training__container">
+                <div class="training__head">
+                    <div class="training__intro">
+                        <h2 class="training__title">Computador e ambiente</h2>
+                        <p class="training__text">Dois assistentes de terminal feitos com <code class="training__code">inquirer</code> e <code class="training__code">tqdm</code>: prepare o ambiente para programar e monte a lista de peças do computador.</p>
+                    </div>
+                    <ul class="training__tags">
+                        <li class="training__tag">Python</li>
+                        <li class="training__tag">getters / setters</li>
+                        <li class="training__tag">inquirer</li>
+                        <li class="training__tag">tqdm</li>
+                    </ul>
+                </div>
+                <div class="training__body">
+                    <div class="switch" role="tablist" aria-label="Computador e ambiente">
+                        <button class="switch__option switch__option--active" type="button" role="tab" id="setup-demo-tab" aria-controls="setup-demo" aria-selected="true">Testar</button>
+                        <button class="switch__option" type="button" role="tab" id="setup-code-tab" aria-controls="setup-code" aria-selected="false" tabindex="-1">Código original</button>
+                    </div>
+                    <div class="training__panel" id="setup-demo" role="tabpanel" aria-labelledby="setup-demo-tab">
+                        <div class="setup">
+                            <form class="form setup__card" data-room-form>
+                                <h3 class="school__subtitle">Ambiente</h3>
+                                <fieldset class="field field--group">
+                                    <legend class="field__label field__label--legend">Como está o som do ambiente?</legend>
+                                    <div class="field__options">
+                                        <label class="field__option"><input class="field__radio" type="radio" name="sound" value="Barulheira" required> Barulheira</label>
+                                        <label class="field__option"><input class="field__radio" type="radio" name="sound" value="Silêncio"> Silêncio</label>
+                                        <label class="field__option"><input class="field__radio" type="radio" name="sound" value="Mediano"> Mediano</label>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="field field--group" data-room-focus hidden>
+                                    <legend class="field__label field__label--legend">Você vai conseguir se concentrar na programação?</legend>
+                                    <div class="field__options">
+                                        <label class="field__option"><input class="field__radio" type="radio" name="focus" value="yes"> Sim</label>
+                                        <label class="field__option"><input class="field__radio" type="radio" name="focus" value="no"> Não</label>
+                                    </div>
+                                </fieldset>
+                                <div class="form__actions">
+                                    <button class="button" type="submit">Preparar ambiente</button>
+                                </div>
+                            </form>
+
+                            <form class="form setup__card" data-computer-form>
+                                <h3 class="school__subtitle">Computador</h3>
+                                <fieldset class="field field--group">
+                                    <legend class="field__label field__label--legend">Energia</legend>
+                                    <div class="field__options">
+                                        <label class="field__option"><input class="field__radio" type="radio" name="power" value="on" checked> Ligado</label>
+                                        <label class="field__option"><input class="field__radio" type="radio" name="power" value="off"> Desligado</label>
+                                    </div>
+                                </fieldset>
+                                <div class="form__row" data-computer-parts>
+                                    <div class="field">
+                                        <label class="field__label" for="pc-cpu">Processador (opcional)</label>
+                                        <input class="field__input" id="pc-cpu" name="processor" type="text" placeholder="ex.: Ryzen 5 5600">
+                                    </div>
+                                    <div class="field">
+                                        <label class="field__label" for="pc-gpu">Placa de vídeo (opcional)</label>
+                                        <input class="field__input" id="pc-gpu" name="graphicsCard" type="text" placeholder="ex.: RTX 3060">
+                                    </div>
+                                    <div class="field">
+                                        <label class="field__label" for="pc-psu">Fonte (opcional)</label>
+                                        <input class="field__input" id="pc-psu" name="powerSupply" type="text" placeholder="ex.: 650W 80 Plus">
+                                    </div>
+                                    <div class="field">
+                                        <label class="field__label" for="pc-board">Placa-mãe (opcional)</label>
+                                        <input class="field__input" id="pc-board" name="motherboard" type="text" placeholder="ex.: B550M">
+                                    </div>
+                                </div>
+                                <div class="form__actions">
+                                    <button class="button" type="submit">Listar peças</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="terminal" role="log" aria-live="polite" aria-label="Saída do terminal">
+                            <div class="terminal__bar">
+                                <span class="terminal__dot"></span>
+                                <span class="terminal__dot"></span>
+                                <span class="terminal__dot"></span>
+                                <span class="terminal__title">python main.py</span>
+                            </div>
+                            <div class="terminal__screen" data-terminal>
+                                <p class="terminal__line terminal__line--muted">$ aguardando você escolher uma opção…</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="training__panel" id="setup-code" role="tabpanel" aria-labelledby="setup-code-tab" hidden>
+                        <div class="code">
+                            <div class="code__toolbar">
+                                <div class="code__files">
+                                    <button class="code__file" type="button" data-src="source/inquirer/ambiente.py">ambiente.py</button>
+                                    <button class="code__file" type="button" data-src="source/inquirer/computer.py">computer.py</button>
+                                    <button class="code__file" type="button" data-src="source/inquirer/main.py">main.py</button>
+                                </div>
+                                <button class="code__copy" type="button" disabled><span class="code__copy-label">Copiar código</span></button>
+                            </div>
+                            <p class="visually-hidden code__status" aria-live="polite"></p>
+                            <pre class="code__block" tabindex="0"><code class="code__content"></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- shared:footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__brand">
+                <a class="footer__home" href="../index.html">
+                    <img class="footer__logo" src="../shared/img/logo-64.webp" srcset="../shared/img/logo-64.webp 1x, ../shared/img/logo-128.webp 2x" width="32" height="32" alt="" loading="lazy" decoding="async">
+                    <span class="footer__name">itstfs</span>
+                </a>
+                <p class="footer__text">Treinos de programação em Python, Java, JavaScript, HTML, CSS e SQL, recriados para rodar no navegador.</p>
+                <!-- Decoration only: the languages are already named in the text above -->
+                <ul class="footer__stack" aria-hidden="true">
+                    <li class="footer__lang"><svg class="footer__lang-icon" viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg></li>
+                    <li class="footer__lang"><svg class="footer__lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg></li>
+                    <li class="footer__lang"><svg class="footer__lang-icon" viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg></li>
+                    <li class="footer__lang"><svg class="footer__lang-icon" viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg></li>
+                    <li class="footer__lang"><svg class="footer__lang-icon" viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"/></svg></li>
+                    <li class="footer__lang"><svg class="footer__lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg></li>
+                </ul>
+            </div>
+            <nav class="footer__nav" aria-labelledby="footer-nav-title">
+                <h2 class="footer__title" id="footer-nav-title">Redes</h2>
+                <ul class="footer__list">
+                    <li>
+                        <a class="footer__link" href="https://www.instagram.com/tfavarelli/" target="_blank" rel="noopener noreferrer">
+                            <svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+                            Instagram<span class="visually-hidden"> (abre em nova aba)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="footer__link" href="https://www.linkedin.com/in/thaiza-favarelli-da-silva/" target="_blank" rel="noopener noreferrer">
+                            <svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><path d="M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                            LinkedIn<span class="visually-hidden"> (abre em nova aba)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="footer__link" href="https://www.youtube.com/@itstfs" target="_blank" rel="noopener noreferrer">
+                            <svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+                            YouTube<span class="visually-hidden"> (abre em nova aba)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="footer__link" href="https://github.com/itstfs" target="_blank" rel="noopener noreferrer">
+                            <svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                            GitHub<span class="visually-hidden"> (abre em nova aba)</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="footer__bottom">
+                <p class="footer__copy">© 2026 itstfs</p>
+                <a class="footer__top" href="#top">↑ Voltar ao topo</a>
+            </div>
+        </div>
+    </footer>
+    <!-- /shared:footer -->
+</body>
+</html>

@@ -1,0 +1,207 @@
+/* ==========================================================================
+   Layer 7 of 7 · Training and code — the content blocks of each interface
+   Training section and the original source viewer (with copy button).
+   Pages link this file directly (no sync needed); tools/build.mjs inlines it in dist/.
+   ========================================================================== */
+
+/* Training section ---------------------------------------------------------- */
+
+/* Two groups: head (title, text, tags) and body (switch + panels) */
+.training__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    padding-top: var(--space-7);
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.training__head {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.training__intro {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.training__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.training__title {
+    margin: 0;
+    font-size: var(--text-xl);
+    line-height: 1.2;
+}
+
+.training__text {
+    margin: 0;
+    color: var(--color-muted);
+}
+
+.training__code {
+    padding: 1px 6px;
+    border-radius: 4px;
+    background-color: var(--color-surface-alt);
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+}
+
+.training__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.training__tag {
+    padding: 2px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+}
+
+.training__panel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background-color: var(--color-surface);
+}
+
+.training__panel[hidden] {
+    display: none;
+}
+
+/* Original source viewer ---------------------------------------------------- */
+
+.code {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    min-width: 0;
+}
+
+/* File buttons on the left, "Copiar código" on the right */
+.code__toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-2) var(--space-4);
+}
+
+.code__files {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.code__copy {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-height: var(--target);
+    padding: 0 var(--space-4);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-small);
+    background-color: transparent;
+    color: var(--color-text);
+    font: inherit;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.code__copy:hover {
+    border-color: var(--color-accent);
+}
+
+.code__copy:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.code__copy--done {
+    border-color: var(--color-success);
+    color: var(--color-success);
+}
+
+.code__file {
+    min-height: var(--target);
+    padding: 0 var(--space-3);
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-small);
+    background-color: var(--color-surface-alt);
+    color: var(--color-muted);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    cursor: pointer;
+}
+
+.code__file--active {
+    border-color: var(--color-accent);
+    color: var(--color-text);
+}
+
+.code__block {
+    max-height: 480px;
+    margin: 0;
+    padding: var(--space-4);
+    overflow: auto;
+    border-radius: var(--radius-small);
+    background-color: var(--color-bg);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    tab-size: 4;
+    scrollbar-width: thin;
+}
+
+@media (min-width: 768px) {
+    .training__container {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .training__panel {
+        padding: 28px;
+    }
+
+    /* Precise pointers on larger screens: compact secondary controls */
+    .code__file,
+    .code__copy {
+        min-height: 40px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .training__container {
+        width: 1140px;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Windows high contrast: keep the selected file visible */
+@media (forced-colors: active) {
+    .code__file--active {
+        border-color: Highlight;
+        outline: 2px solid Highlight;
+    }
+}
